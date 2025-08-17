@@ -1,22 +1,9 @@
+import type { JobData } from '@/types';
 import { Badge } from './UI/Badge';
 import { Card } from './UI/Card';
 import { Stack } from './UI/Stack';
-
-interface JobPositionProps {
-  id: number;
-  company: string;
-  logo: string;
-  new: boolean;
-  featured: boolean;
-  position: string;
-  role: string;
-  level: string;
-  postedAt: string;
-  contract: string;
-  location: string;
-  languages: string[];
-  tools: string[];
-}
+import { useAppDispatch } from '@/redux/react-hooks';
+import { addFilter } from '@/redux/slices/filtersSlice';
 
 const JobPosition = ({
   company,
@@ -31,7 +18,9 @@ const JobPosition = ({
   location,
   languages,
   tools,
-}: JobPositionProps) => {
+}: JobData) => {
+  const dispatch = useAppDispatch();
+
   const badges: string[] = [role, level, ...languages, ...tools, position];
 
   return (
@@ -45,12 +34,32 @@ const JobPosition = ({
               {(isNew || featured) && (
                 <Stack style={{ flexWrap: 'nowrap' }}>
                   {isNew && (
-                    <Badge variant='rounded' colorScheme='primary'>
+                    <Badge
+                      variant='rounded'
+                      colorScheme='primary'
+                      onClick={() => {
+                        // можно проверять наличие filter в filters перед добавлением
+                        if (true) {
+                          console.log('dispatch(addFilter(badge))');
+                          dispatch(addFilter('NEW!'));
+                        }
+                      }}
+                    >
                       NEW!
                     </Badge>
                   )}
                   {featured && (
-                    <Badge variant='rounded' colorScheme='dark'>
+                    <Badge
+                      variant='rounded'
+                      colorScheme='dark'
+                      onClick={() => {
+                        // можно проверять наличие filter в filters перед добавлением
+                        if (true) {
+                          console.log('dispatch(addFilter(badge))');
+                          dispatch(addFilter('FEATURED'));
+                        }
+                      }}
+                    >
                       FEATURED
                     </Badge>
                   )}
@@ -66,8 +75,19 @@ const JobPosition = ({
           </div>
         </div>
         <Stack>
-          {badges.map((item) => (
-            <Badge key={item}>{item}</Badge>
+          {badges.map((badge) => (
+            <Badge
+              key={badge}
+              onClick={() => {
+                // можно проверять наличие filter в filters перед добавлением
+                if (true) {
+                  console.log('dispatch(addFilter(badge))');
+                  dispatch(addFilter(badge));
+                }
+              }}
+            >
+              {badge}
+            </Badge>
           ))}
         </Stack>
       </div>
