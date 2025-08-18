@@ -2,8 +2,10 @@ import type { JobData } from '@/types';
 import { Badge } from './UI/Badge';
 import { Card } from './UI/Card';
 import { Stack } from './UI/Stack';
-import { useAppDispatch } from '@/redux/react-hooks';
-import { addFilter } from '@/redux/slices/filtersSlice';
+
+interface JobPositionProps extends JobData {
+  handleAddFilter: (filterName: string) => void;
+}
 
 const JobPosition = ({
   company,
@@ -18,9 +20,8 @@ const JobPosition = ({
   location,
   languages,
   tools,
-}: JobData) => {
-  const dispatch = useAppDispatch();
-
+  handleAddFilter,
+}: JobPositionProps) => {
   const badges: string[] = [role, level, ...languages, ...tools, position];
 
   return (
@@ -37,13 +38,7 @@ const JobPosition = ({
                     <Badge
                       variant='rounded'
                       colorScheme='primary'
-                      onClick={() => {
-                        // можно проверять наличие filter в filters перед добавлением
-                        if (true) {
-                          console.log('dispatch(addFilter(badge))');
-                          dispatch(addFilter('NEW!'));
-                        }
-                      }}
+                      onClick={() => handleAddFilter('NEW!')}
                     >
                       NEW!
                     </Badge>
@@ -52,13 +47,7 @@ const JobPosition = ({
                     <Badge
                       variant='rounded'
                       colorScheme='dark'
-                      onClick={() => {
-                        // можно проверять наличие filter в filters перед добавлением
-                        if (true) {
-                          console.log('dispatch(addFilter(badge))');
-                          dispatch(addFilter('FEATURED'));
-                        }
-                      }}
+                      onClick={() => handleAddFilter('FEATURED')}
                     >
                       FEATURED
                     </Badge>
@@ -76,16 +65,7 @@ const JobPosition = ({
         </div>
         <Stack>
           {badges.map((badge) => (
-            <Badge
-              key={badge}
-              onClick={() => {
-                // можно проверять наличие filter в filters перед добавлением
-                if (true) {
-                  console.log('dispatch(addFilter(badge))');
-                  dispatch(addFilter(badge));
-                }
-              }}
-            >
+            <Badge key={badge} onClick={() => handleAddFilter(badge)}>
               {badge}
             </Badge>
           ))}

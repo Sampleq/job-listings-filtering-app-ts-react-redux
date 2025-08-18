@@ -8,8 +8,11 @@ import { removeAllFilters, removeFilter } from '@/redux/slices/filtersSlice';
 
 const FilterPanel = () => {
   const dispatch = useAppDispatch();
-
   const filters = useSelector(selectFilters);
+
+  if (!filters.length) {
+    return null;
+  }
 
   return (
     <Card className='filter-panel'>

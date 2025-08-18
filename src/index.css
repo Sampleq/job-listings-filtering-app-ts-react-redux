@@ -131,6 +131,7 @@ body {
 
 .filter-panel {
   margin-top: -32px;
+  margin-bottom: 2rem;
 }
 
 .filter-panel-wrapper {
@@ -207,7 +208,7 @@ body {
 }
 
 .job-list {
-  padding: 3rem 0;
+  padding: 1rem 0 3rem;
   display: flex;
   flex-direction: column;
   gap: 3rem;

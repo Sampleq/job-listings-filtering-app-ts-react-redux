@@ -30,5 +30,4 @@ const filtersSlice = createSlice({
 export const { addFilter, removeFilter, removeAllFilters } =
   filtersSlice.actions;
 
-// экспортируем весь reducer для определённого slice, чтобы добавить его в Redux-store
 export default filtersSlice.reducer;

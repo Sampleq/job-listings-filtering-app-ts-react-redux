@@ -3,6 +3,7 @@ import { JobList } from './components/JobList';
 import { TheHeader } from './components/TheHeader';
 
 import './App.css';
+import { Error } from './components/Error';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <FilterPanel />
         <JobList />
       </div>
+      <Error />
     </>
   );
 }
