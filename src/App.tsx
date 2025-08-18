@@ -4,6 +4,7 @@ import { TheHeader } from './components/TheHeader';
 
 import './App.css';
 import { Error } from './components/Error';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -13,6 +14,8 @@ function App() {
         <FilterPanel />
         <JobList />
       </div>
+      <Footer />
+
       <Error />
     </>
   );

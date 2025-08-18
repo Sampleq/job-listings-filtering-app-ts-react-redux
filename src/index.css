@@ -48,6 +48,12 @@ body {
   background-color: var(--primary);
 }
 
+.footer {
+  padding: 1rem;
+  background-color: var(--primary);
+  text-align: center;
+}
+
 .link {
   color: var(--grey-800);
   text-decoration: none;
@@ -103,6 +109,9 @@ body {
 .badge.badge--dark {
   background-color: var(--grey-900);
   color: var(--grey-100);
+}
+.badge.badge--rounded {
+  border-radius: 2rem;
 }
 .badge.badge--primary {
   background-color: var(--primary);
@@ -208,10 +217,14 @@ body {
 }
 
 .job-list {
-  padding: 1rem 0 3rem;
+  padding: 0rem 0 3rem;
   display: flex;
   flex-direction: column;
   gap: 3rem;
+}
+
+.job-list-total {
+  text-align: center;
 }
 
 @media (min-width: 1024px) {

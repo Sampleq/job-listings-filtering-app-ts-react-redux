@@ -74,7 +74,7 @@ const JobList = () => {
 
   return (
     <>
-      <h2>Total Jobs: {filteredJobs.length}</h2>
+      <h2 className='job-list-total'>Total Jobs: {filteredJobs.length}</h2>
       <div className='job-list'>
         {isLoadingJobs ? (
           <h2>Loading...</h2>
