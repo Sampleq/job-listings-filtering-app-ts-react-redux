@@ -33,7 +33,7 @@ const JobPosition = ({
             <div className='job-postion-company'>
               <h3>{company}</h3>
               {(isNew || featured) && (
-                <Stack style={{ flexWrap: 'nowrap' }}>
+                <Stack>
                   {isNew && (
                     <Badge
                       variant='rounded'

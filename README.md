@@ -2,7 +2,7 @@
 
 Small Redux exercise-demo with no API.
 
-Working Deom deployed on Vercel: https://job-listings-filtering-app-ts-react.vercel.app/
+Working Demo deployed on Vercel: https://job-listings-filtering-app-ts-react.vercel.app/
 
 Original challenge: https://www.frontendmentor.io/challenges/job-listings-with-filtering-ivstIPCt
 

@@ -72,6 +72,11 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  justify-content: center;
+}
+
+.stack .stack_featured {
+  flex-wrap: nowrap;
 }
 
 .card {
@@ -159,7 +164,8 @@ body {
 .job-position-info {
   position: relative;
   display: flex;
-  /* flex-shrink: 0; */
+  flex-shrink: 0;
+  max-width: 42rem;
   gap: 1rem;
   padding-top: 0.75rem;
   padding-bottom: 1.5rem;
@@ -186,7 +192,7 @@ body {
 }
 .job-postion-company h3 {
   margin: 0;
-  font-style: var(--fs-normal);
+  font-size: var(--fs-normal);
   color: var(--primary);
   font-weight: var(--fw-bold);
 }
