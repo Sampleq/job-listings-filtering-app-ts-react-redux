@@ -6,16 +6,8 @@ interface StackProps {
   style?: React.CSSProperties;
 }
 
-const Stack = ({ children, pos, style }: StackProps) => (
-  <div
-    className='stack'
-    style={{
-      ...style,
-      justifyContent: pos === 'center' ? `flex-${pos}` : 'center',
-    }}
-  >
-    {children}
-  </div>
+const Stack = ({ children }: StackProps) => (
+  <div className='stack'>{children}</div>
 );
 
 export { Stack };
